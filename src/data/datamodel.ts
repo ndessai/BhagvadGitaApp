@@ -1,4 +1,4 @@
-import { String } from 'typescript-string-operations';
+import { String } from './string';
 
 export class Feed {
     readonly Host: string;
@@ -13,16 +13,16 @@ export class Feed {
 }
 
 export class Language {
-    Id: int;
+    Id: number;
     Name: string;
     DisplayName: string;
-    IsOptional: bool;
+    IsOptional: boolean;
 
-    constructor(id: int, name: string, displayName: string){
-        Id = id;
-        Name = name;
-        DisplayName = String.IsNullOrWhiteSpace(displayName)? name: displayName;
-        IsOptional = name == 'Sanskrit';
+    constructor(id: number, name: string, displayName?: string){
+        this.Id = id;
+        this.Name = name;
+        this.DisplayName = String.IsNullOrWhiteSpace(displayName)? name: displayName;
+        this.IsOptional = name == 'Sanskrit';
     }
 }
 
@@ -38,15 +38,15 @@ export class Link {
 }
 
 export class Verse {
-    ChapterId: int;
-    Id: int;
+    ChapterId: number;
+    Id: number;
     Shloka: string;
     Transliteration: string;
     Anvaya: string;
     Translation: string;
     Sanskrit: string;
 
-    constructor(chapterId: int, id: int){
+    constructor(chapterId: number, id: number){
         this.Id = id;
         this.ChapterId = chapterId;
     }
@@ -93,22 +93,22 @@ export class Verse {
 }
 
 export class Chapter {
-    Id: int;
+    Id: number;
     Name: string;
-    MaxVerse: int;
+    MaxVerse: number;
 
-    constructor(id: int, name: string, maxVerse: int){
-        Id = id;
-        Name = name;
-        MaxVerse = maxVerse;
+    constructor(id: number, name: string, maxVerse: number){
+        this.Id = id;
+        this.Name = name;
+        this.MaxVerse = maxVerse;
     }
 
     First(): Verse {
-        return new Verse(this.id, 1);
+        return new Verse(this.Id, 1);
     }
 
     Last(): Verse {
-        return new Verse(this.id, MaxVerse);
+        return new Verse(this.Id, this.MaxVerse);
     }
 }
 
@@ -161,9 +161,9 @@ export class Globals {
         ];
 
         this.OptionalLanguages = new Array();
-        for(let language in this.Languages){
+        for(let language of this.Languages){
             if(language.IsOptional){
-                result.push(language);
+                this.OptionalLanguages.push(language);
             }
         }
     }

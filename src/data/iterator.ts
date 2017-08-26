@@ -26,5 +26,6 @@ export class Iterator {
         } else {
             this.currentVerse = this.currentVerse.Next();
         }
+        return this.currentVerse;
     }
 }

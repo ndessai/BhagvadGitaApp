@@ -1,8 +1,8 @@
 export class Settings {
-    ShowOptionalLanguages: bool;
-    PlayOriginalOnLoad: bool;
+    ShowOptionalLanguages: boolean;
+    PlayOriginalOnLoad: boolean;
     PlayLanguagesOnLoad: string[];
-    AutoForward: bool;
+    AutoForward: boolean;
 
     constructor(){
         this.ShowOptionalLanguages = false;
