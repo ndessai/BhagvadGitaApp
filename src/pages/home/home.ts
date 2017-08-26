@@ -23,6 +23,6 @@ export class HomePage {
   onSanskritEnded(event: any){
     console.log(event);
     this.verse = this.iterator.Next();
-    event.target.Load();
+    event.target.load();
   }
 }
