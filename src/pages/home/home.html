@@ -5,12 +5,11 @@
 </ion-header>
 
 <ion-content padding>
-  <div align=center>Sanskrit Vocal<br><audio controls>
-  <source type="audio/mpeg" src="/AudioArchive/Gita/Sanskrit/verses/01-02.mp3">Your browser does not support audio element</audio></div>
-<p><h2>Shloka</h2><p><img src="png/verse-01-02-1.png" width=350>
-<p><h2>Transliteration</h2><p><img src="png/verse-01-02-2.png" width=400>
-
-<p><h2>Anvaya</h2><p><img src="png/verse-01-02-3.png" width=550>
-
-<p><h2>Translation</h2><p><img src="png/verse-01-02-4.png" width=550>
+    <div align=center>{{chapter.Id}}-{{chapter.Name}}</div>
+    <div align=center><audio controls autoplay (ended)="onSanskritEnded($event)">
+  <source type="audio/mpeg" src={{verse.Sanskrit}}>Your browser does not support audio element</audio></div>
+<p><img src={{verse.Shloka}} width=350>
+<p><img src={{verse.Transliteration}} width=400>
+<p><img src={{verse.Anvaya}} width=550>
+<p><img src={{verse.Translation}}  width=550>
 </ion-content>

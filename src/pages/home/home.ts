@@ -11,9 +11,18 @@ import { Globals, Chapter, Verse } from '../../data/datamodel';
 })
 export class HomePage {
   verse: Verse;
+  iterator: Iterator;
+  chapter: Chapter;
 
   constructor(public navCtrl: NavController) {
-    this.verse = new Iterator(new Settings(), new Globals()).Next();
+    this.iterator = new Iterator(new Settings(), new Globals());
+    this.verse = this.iterator.Next();
+    this.chapter = this.verse.Chapter;
   }
 
+  onSanskritEnded(event: any){
+    console.log(event);
+    this.verse = this.iterator.Next();
+    event.target.Load();
+  }
 }

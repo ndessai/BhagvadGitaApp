@@ -45,6 +45,7 @@ export class Verse {
     Anvaya: string;
     Translation: string;
     Sanskrit: string;
+    Chapter: Chapter;
 
     constructor(chapterId: number, id: number){
         this.Id = id;
@@ -57,6 +58,7 @@ export class Verse {
     }
 
     Resolve(globals: Globals) {
+        this.Chapter = globals.Chapters[this.ChapterId -1];
         //http://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/01-02.mp3
         this.Sanskrit = String.Format("{0}{1}{2}{3}{4}-{5}.{6}",
             globals.Source.Host, globals.Source.AudioDir, "Sanskrit", "/verses/",
