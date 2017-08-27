@@ -40,7 +40,6 @@ export class String {
             let firstArg = args[0];
             if (Array.isArray(firstArg) || firstArg instanceof Array) {
                 let tempString = String.Empty;
-                let count = 0;
 
                 for (let i = 0; i < firstArg.length; i++) {
                     let current = firstArg[i];
@@ -132,7 +131,6 @@ export class String {
 
                 var mod = integer.length % 3;
                 var output = (mod > 0 ? (integer.substring(0, mod)) : String.Empty);
-                var firstGroup = output;
                 var remainingGroups = integer.substring(mod).match(/.{3}/g);
                 output =  output + '.' + String.Join('.',remainingGroups);
                 arg = output + (parts.length > 1 ? ','+ parts[1] : '');
