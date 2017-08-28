@@ -13,4 +13,7 @@ export class TabsPage {
   
   constructor() {
   }
+
+  onChapterUpdated(event: any){
+  }
 }

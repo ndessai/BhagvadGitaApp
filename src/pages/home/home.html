@@ -1,15 +1,15 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+<ion-header >
+  <ion-navbar color="primary">
+    <ion-title  text-center>{{chapter.Id}} - {{chapter.Name}}</ion-title>
+    
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <div align=center>{{chapter.Id}}-{{chapter.Name}}</div>
     <div align=center><audio controls autoplay (ended)="onSanskritEnded($event)">
   <source type="audio/mpeg" src={{verse.Sanskrit}}>Your browser does not support audio element</audio></div>
-<p><img src={{verse.Shloka}} width=350>
-<p><img src={{verse.Transliteration}} width=400>
-<p><img src={{verse.Anvaya}} width=550>
-<p><img src={{verse.Translation}}  width=550>
+<p><img src={{verse.Shloka}}>
+<p><img src={{verse.Transliteration}}>
+<p><img src={{verse.Anvaya}}>
+<p><img src={{verse.Translation}}>
 </ion-content>
