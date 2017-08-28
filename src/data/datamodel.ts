@@ -98,11 +98,13 @@ export class Chapter {
     Id: number;
     Name: string;
     MaxVerse: number;
+    RealMaxVerse: number;
 
-    constructor(id: number, name: string, maxVerse: number){
+    constructor(id: number, name: string, maxVerse: number, realMaxVerse?: number){
         this.Id = id;
         this.Name = name;
         this.MaxVerse = maxVerse;
+        this.RealMaxVerse = realMaxVerse==null? maxVerse: realMaxVerse;
     }
 
     First(): Verse {
@@ -123,24 +125,24 @@ export class Globals {
     constructor(){
         this.Source = new Feed('http://www.bhagavad-gita.org', '/Gita/png/', '/AudioArchive/Gita/');
         this.Chapters = [
-            new Chapter(1, 'Visada Yoga', 46),
-            new Chapter(2, 'Sankhya Yoga', 72),
+            new Chapter(1, 'Visada Yoga', 39, 46),
+            new Chapter(2, 'Sankhya Yoga', 71, 72),
             new Chapter(3, 'Karma Yoga', 43),
             new Chapter(4, 'Jnana Yoga', 42),
-            new Chapter(5, 'Karma Vairagya Yoga', 29),
-            new Chapter(6, 'Abhyasa Yoga', 47),
+            new Chapter(5, 'Karma Vairagya Yoga', 27, 29),
+            new Chapter(6, 'Abhyasa Yoga', 42, 47),
             new Chapter(7, 'Paramhamsa Vijnana Yoga', 30),
             new Chapter(8, 'Aksara Parabrahman Yoga', 28),
             new Chapter(9, 'Raja Vidya Guhya Yoga', 34),
-            new Chapter(10, 'Vibhuti Vistara Yoga', 42),
-            new Chapter(11, 'Visvarupa Darsana Yoga', 55),
-            new Chapter(12, 'Bhakti Yoga', 20),
-            new Chapter(13, 'Ksetra Ksetrajna Vibhaga Yoga', 35),
-            new Chapter(14, 'Gunatraya Vibhaga Yoga', 27),
-            new Chapter(15, 'Purusottama Yoga', 20),
-            new Chapter(16, 'Daivasura Sampad Vibhaga Yoga', 24),
-            new Chapter(17, 'Sraddhatraya Vibhaga Yoga', 28),
-            new Chapter(18, 'Moksa Upadesa Yoga', 78),
+            new Chapter(10, 'Vibhuti Vistara Yoga', 40, 42),
+            new Chapter(11, 'Visvarupa Darsana Yoga', 52, 55),
+            new Chapter(12, 'Bhakti Yoga', 16, 20),
+            new Chapter(13, 'Ksetra Ksetrajna Vibhaga Yoga', 29, 35),
+            new Chapter(14, 'Gunatraya Vibhaga Yoga', 24, 27),
+            new Chapter(15, 'Purusottama Yoga', 19, 20),
+            new Chapter(16, 'Daivasura Sampad Vibhaga Yoga', 19, 24),
+            new Chapter(17, 'Sraddhatraya Vibhaga Yoga', 24, 28),
+            new Chapter(18, 'Moksa Upadesa Yoga', 74, 78),
         ];
         this.Languages = [
             new Language (1, 'Sanskrit'),
