@@ -21,8 +21,8 @@ export class HomePage {
   }
 
   onSanskritEnded(event: any){
-    console.log(event);
     this.verse = this.iterator.Next();
+    this.chapter = this.verse.Chapter;
     event.target.load();
   }
 }
