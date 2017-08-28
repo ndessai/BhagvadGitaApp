@@ -62,34 +62,34 @@ export class Verse {
         //http://www.bhagavad-gita.org/AudioArchive/Gita/Sanskrit/verses/01-02.mp3
         this.Sanskrit = String.Format("{0}{1}{2}{3}{4}-{5}.{6}",
             globals.Source.Host, globals.Source.AudioDir, "Sanskrit", "/verses/",
-            this.ChapterId < 10? "0" + this.ChapterId: this.ChapterId,
-            this.Id < 10? "0" + this.Id: this.Id, "mp3" );
+            this.ChapterId < 10? "0" + this.ChapterId: this.ChapterId.toString(),
+            this.Id < 10? "0" + this.Id: this.Id.toString(), "mp3" );
         //http://www.bhagavad-gita.org/Gita/png/verse-01-02-1.png
         this.Shloka = String.Format("{0}{1}{2}-{3}-{4}-{5}.{6}",
             globals.Source.Host, globals.Source.ImageDir, "verse",
-            this.ChapterId < 10? "0" + this.ChapterId: this.ChapterId,
-            this.Id < 10? "0" + this.Id: this.Id,
+            this.ChapterId < 10? "0" + this.ChapterId: this.ChapterId.toString(),
+            this.Id < 10? "0" + this.Id: this.Id.toString(),
             "1", "png");
 
         //http://www.bhagavad-gita.org/Gita/png/verse-01-02-2.png
         this.Transliteration = String.Format("{0}{1}{2}-{3}-{4}-{5}.{6}",
             globals.Source.Host, globals.Source.ImageDir, "verse",
-            this.ChapterId < 10? "0" + this.ChapterId: this.ChapterId,
-            this.Id < 10? "0" + this.Id: this.Id,
+            this.ChapterId < 10? "0" + this.ChapterId: this.ChapterId.toString(),
+            this.Id < 10? "0" + this.Id: this.Id.toString(),
             "2", "png");
 
         //http://www.bhagavad-gita.org/Gita/png/verse-01-02-3.png
         this.Anvaya = String.Format("{0}{1}{2}-{3}-{4}-{5}.{6}",
             globals.Source.Host, globals.Source.ImageDir, "verse",
-            this.ChapterId < 10? "0" + this.ChapterId: this.ChapterId,
-            this.Id < 10? "0" + this.Id: this.Id,
+            this.ChapterId < 10? "0" + this.ChapterId: this.ChapterId.toString(),
+            this.Id < 10? "0" + this.Id: this.Id.toString(),
             "3", "png");
 
         //http://www.bhagavad-gita.org/Gita/png/verse-01-02-4.png
         this.Translation = String.Format("{0}{1}{2}-{3}-{4}-{5}.{6}",
             globals.Source.Host, globals.Source.ImageDir, "verse",
-            this.ChapterId < 10? "0" + this.ChapterId: this.ChapterId,
-            this.Id < 10? "0" + this.Id: this.Id,
+            this.ChapterId < 10? "0" + this.ChapterId: this.ChapterId.toString(),
+            this.Id < 10? "0" + this.Id: this.Id.toString(),
             "4", "png");
     }
 }
